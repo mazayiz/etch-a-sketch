@@ -1,4 +1,8 @@
-body {
-    background-color: black;    
-    color: white;
+div {
+    border: 1px solid black;
+    height: 5px;
 }
+
+/* #container {
+    height: 400px;
+} */
