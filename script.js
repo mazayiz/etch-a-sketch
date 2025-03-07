@@ -11,7 +11,8 @@ for (let i = 0; i < 16; i++){
 const markGrid = document.querySelectorAll(".gridSquare");
 
 for (let i = 0; i < markGrid.length; i++) {
-    markGrid[i].addEventListener("click", () => {
+    markGrid[i].addEventListener("mouseover", () => {
         console.log("Fucking Success");
+        markGrid[i].style.backgroundColor = "#008080";
       });
 }
