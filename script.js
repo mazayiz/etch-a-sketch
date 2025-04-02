@@ -23,10 +23,20 @@ function markGridEventListener () {
         const markGrid = document.querySelectorAll(".gridSquare");
         markGrid.forEach(gridSquare => {
             gridSquare.addEventListener("mouseover", () => {
-                gridSquare.style.backgroundColor = "#008080";
-        });
-    })
-}
+                const rgb1 = Math.floor(Math.random()*255);
+                const rgb2 = Math.floor(Math.random()*255);
+                const rgb3 = Math.floor(Math.random()*255);
+                const rgbValue = "rgb(" + rgb1 + ", " + rgb2 + ", " + rgb3 + ")"
+                gridSquare.style.backgroundColor = rgbValue;
+
+                const currentOpacity = parseFloat(gridSquare.style.opacity) || 0;  
+                // console.log("Before:", gridSquare.style.opacity, typeof gridSquare.style.opacity);
+                const opacityIncrease = currentOpacity + 0.1;
+                // console.log("After:", opacityIncrease, typeof opacityIncrease);
+                gridSquare.style.opacity = opacityIncrease;
+            })
+    });
+};
 
 const newGridButton = document.querySelector("button")
 newGridButton.addEventListener("click", () => {
@@ -36,7 +46,7 @@ newGridButton.addEventListener("click", () => {
     } else {
         for (i = 0; i < oldGridSize; i++) {
             gridContainer.removeChild(gridContainer.children[0]);
-        }
+        };
         gridCreate();
-    }
+    };
 });
